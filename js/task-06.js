@@ -1,15 +1,13 @@
 const textInput = document.querySelector("#validation-input");
-const validPass = document.querySelector('input[data-length = "6"]');
-const passLength = validPass.dataset.length;
-
 
 textInput.addEventListener("blur", () => {
-    if (textInput.value.length === 6) {
+    if (textInput.value.length == textInput.dataset.length) {
+        textInput.classList.remove('invalid');
         textInput.classList.add('valid');
-       
     }
     else {
+        textInput.classList.remove('valid');
         textInput.classList.add('invalid');
-       
-    } 
+    }
+    
 });
